@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Wens
+        </title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Signika+Negative:wght@400;700&family=Sofia+Sans+Semi+Condensed:ital,wght@1,500&family=Sofia+Sans:ital,wght@1,800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1><a href="{% url 'home' %}">YulchiboyevBlog</a></h1>
+        </header>
+        {% if user.is_authenticated %}
+            <p>Xush kelibsiz, {{ user.username }}!</p>
+            <p><a href="{% url 'logout' %}">Chiqib ketish</a></p>
+        {% else %}
+        <p>
+            <a href="{% url 'login' %}">Saytga kirish</a> /
+            <a href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
+        </p>
+        <h2><a href="{% url 'create' %}">Yangi post qo'shish</a></h2>
+        {% endif %}
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>

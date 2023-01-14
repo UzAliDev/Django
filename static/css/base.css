@@ -1,0 +1,10 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signika Negative', sans-serif;
+    font-family: 'Sofia Sans', sans-serif;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+}
+
+header h1 a{
+    color: green;
+}
